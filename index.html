@@ -2,8 +2,371 @@
 <html>
 	<head>
 		<title>Christoffer</title>
-  </head>
-  <body>
-    <p>Hello world!</p>
-  </body>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: "border-box";
+				overflow: hidden;
+			}
+
+			cavas {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			main {
+				position: absolute;
+				top: 20%;
+				left: 30%;
+				color: rgba(32, 223, 32);
+				display: flex;
+				flex-direction: column;
+				font-family: serif;
+				padding: 2rem;
+			}
+
+			.name {
+				font-size: 3em;
+			}
+
+			#links {
+				margin-top: 0.5em;
+				font-size: 1.5em;
+				display: flex;
+				flex-direction: column;
+			}
+
+			a:link, a:visited, a:active {
+				color: inherit;
+				text-decoration: none;
+			}
+
+			a:hover {
+				color: rgba(0, 255, 0);
+				text-decoration: underline;
+			}
+
+			.br {
+				border-right: 1px solid rgba(32, 223, 32);
+				padding-right: 20px;
+				margin-right: 20px;
+				
+				background-color: rgba(0, 0, 0, 0.1);
+        		box-shadow: 0 0 5rem rgba(1, 1, 1);
+			}
+
+			.flex-row {
+				display: flex;
+				flex-direction: row;
+			}
+			
+			.flex-column {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.underline {
+				font-size: 0.8em;
+				margin-top: -0.5em;
+			}
+
+			#interests {
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.right {
+				display: block;
+				position: relative;
+				bottom: 0;
+				width: 100%;
+				text-align: right;
+				align-self: flex-end;
+				margin-top: 3em;
+			}
+
+			#details {
+				display: flex;
+				flex-direction: column;
+			}
+
+			#settings {
+				margin-top: 1.5em;
+				visibility: hidden;
+			}
+
+			#settings > div {
+				height: 100%;
+				width: 20%;
+				text-align: center;
+			}
+
+			div > .active {
+				background-color: greenyellow;
+			}
+
+			.setting {
+				width: 20%;
+				height: 20%;
+				background-color: darkred;
+				margin-right: 40%;
+				margin-left: 40%;
+				border-radius: 75%;
+				cursor: pointer;
+				-webkit-user-select: none;   
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+			#showhide {
+				width: 100%;
+				text-align: right;
+				cursor: pointer;
+				-webkit-user-select: none;   
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			
+			#showhidetext {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<div class="flex-row">
+				<div class="br">
+					<p class="name">
+						Christoffer
+					</p>
+					<p class="underline">
+						Data scientist | Software Engineer | IoT Engineer
+					</p>
+					<div id="links">
+						<a href="https://github.com/ChristofferHolmesland" target="_blank">--&gt; GitHub</a>
+						<a href="https://www.linkedin.com/in/christoffer-holmesland/" target="_blank">--&gt; Twitter</a>
+						<a href="https://twitter.com/crholmesland" target="_blank">--&gt; LinkedIn</a>
+						<a href="mailto:christoffer.holmesland@gmail.com">--&gt; Email</a>
+						<a href="https://www.goodreads.com/user/show/110186564-christoffer-holmesland" target="_blank">--&gt; Goodreads</a>
+						<a href="https://www.youtube.com/channel/UC9WNfNL4qF49DTeN8iIhqTg" target="_blank">--&gt; Youtube</a>
+					</div>
+				</div>
+				<div id="details">
+					<div id="interests">
+						<h3>interests</h3>
+						<p>- image and signal processing</p>
+						<p>- time series analysis</p>
+						<p>- radio frequency technology</p>
+						<p>- low level optimization</p>
+						<p>- statistics</p>
+						<p>- robotics</p>
+						<p>- books</p>
+					</div>
+					<div class="right">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Did you ever play tic-tac-toe?
+					</div>
+				</div>
+			</div>
+			<div id="showhide" onclick="showhideSettings()">
+				--&gt; <span id="showhidetext">show signal settings</span>&lt;--
+			</div>
+			<div id="settings" class="flex-row">
+				<div id="amplitude">
+					<p>Amplitude</p>
+					<div class="flex-column">
+						<div onclick="setAmplitude(0, 1000)" class="setting">&nbsp;</div>
+						<div onclick="setAmplitude(1, 500)" class="active setting">&nbsp;</div>
+						<div onclick="setAmplitude(2, 250)" class="setting">&nbsp;</div>
+						<div onclick="setAmplitude(3, 125)" class="setting">&nbsp;</div>
+						<div onclick="setAmplitude(4, 62.5)" class="setting">&nbsp;</div>
+					</div>
+				</div>
+				<div id="wavelength">
+					<p>Wavelength</p>
+					<div class="flex-column">
+						<div onclick="setWavelength(0, 400)" class="setting">&nbsp;</div>
+						<div onclick="setWavelength(1, 200)" class="setting">&nbsp;</div>
+						<div onclick="setWavelength(2, 100)" class="active setting">&nbsp;</div>
+						<div onclick="setWavelength(3, 50)" class="setting">&nbsp;</div>
+						<div onclick="setWavelength(4, 25)" class="setting">&nbsp;</div>
+					</div>
+				</div>
+				<div id="rotation">
+					<p>Rotation</p>
+					<div class="flex-column">
+						<div onclick="setRotator(0, 2 * Math.PI)" class="setting">&nbsp;</div>
+						<div onclick="setRotator(1, 1.5 * Math.PI)" class="setting">&nbsp;</div>
+						<div onclick="setRotator(2, Math.PI)" class="setting">&nbsp;</div>
+						<div onclick="setRotator(3, 0.75 * Math.PI)" class="setting">&nbsp;</div>
+						<div onclick="setRotator(4, 0.25 * Math.PI)" class="active setting">&nbsp;</div>
+					</div>
+				</div>
+				<div id="signals">
+					<p>Signals</p>
+					<div class="flex-column">
+						<div onclick="setSignals(0, 75)" class="setting">&nbsp;</div>
+						<div onclick="setSignals(1, 50)" class="setting">&nbsp;</div>
+						<div onclick="setSignals(2, 25)" class="setting">&nbsp;</div>
+						<div onclick="setSignals(3, 12)" class="active setting">&nbsp;</div>
+						<div onclick="setSignals(4, 6)" class="setting">&nbsp;</div>
+					</div>
+				</div>
+				<div id="speed">
+					<p>Speed</p>
+					<div class="flex-column">
+						<div onclick="setSpeed(0, 1.5)" class="setting">&nbsp;</div>
+						<div onclick="setSpeed(1, 1.25)" class="setting">&nbsp;</div>
+						<div onclick="setSpeed(2, 1)" class="active setting">&nbsp;</div>
+						<div onclick="setSpeed(3, 0.75)" class="setting">&nbsp;</div>
+						<div onclick="setSpeed(4, 0.5)" class="setting">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<canvas id="canvas"></canvas>
+
+		<script>
+			let settingsHidden = true;
+
+			function showhideSettings() {
+				if (settingsHidden) {
+					document.getElementById("settings").style.visibility = "visible";
+					document.getElementById("showhidetext").innerHTML = "hide signal settings";
+				} else {
+					document.getElementById("settings").style.visibility = "hidden";
+					document.getElementById("showhidetext").innerHTML = "show signal settings";
+				}
+
+				settingsHidden = !settingsHidden;
+			}
+
+			function setAmplitude(index, newAmplitude) {
+				amplitude = newAmplitude;
+
+				const elements = document.querySelectorAll("#amplitude > div > div");
+				for (let i = 0; i < elements.length; i++) {
+					if (i === index) {
+						elements[i].classList.add("active");
+					} else {
+						elements[i].classList.remove("active");
+					}
+				}
+			}
+
+			function setWavelength(index, newWavelength) {
+				waveLength = newWavelength;
+
+				const elements = document.querySelectorAll("#wavelength > div > div");
+				for (let i = 0; i < elements.length; i++) {
+					if (i === index) {
+						elements[i].classList.add("active");
+					} else {
+						elements[i].classList.remove("active");
+					}
+				}
+			}
+
+			function setRotator(index, newRotator) {
+				rotator = newRotator;
+
+				const elements = document.querySelectorAll("#rotation > div > div");
+				for (let i = 0; i < elements.length; i++) {
+					if (i === index) {
+						elements[i].classList.add("active");
+					} else {
+						elements[i].classList.remove("active");
+					}
+				}
+			}
+			
+			function setSignals(index, newSignals) {
+				n = newSignals;
+
+				const elements = document.querySelectorAll("#signals > div > div");
+				for (let i = 0; i < elements.length; i++) {
+					if (i === index) {
+						elements[i].classList.add("active");
+					} else {
+						elements[i].classList.remove("active");
+					}
+				}
+			}
+
+			function setSpeed(index, newSpeed) {
+				speed = newSpeed;
+
+				const elements = document.querySelectorAll("#speed > div > div");
+				for (let i = 0; i < elements.length; i++) {
+					if (i === index) {
+						elements[i].classList.add("active");
+					} else {
+						elements[i].classList.remove("active");
+					}
+				}
+			}
+
+			const canvas = document.getElementById("canvas");
+			const ctx = canvas.getContext("2d");
+			canvas.height = window.innerHeight;
+			canvas.width = window.innerWidth;
+
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+			function drawSignal(dir, waveLength, amplitude, offset) {
+				ctx.beginPath();
+				for (let i = 0; i < 1.2 * canvas.width; i++) {
+					ctx.lineTo(dir * i, amplitude / 2 - amplitude / 2 * Math.sin(offset + i / waveLength));
+				}
+
+				ctx.stroke();	
+			}
+
+			let waveLength = 100;
+			let amplitude = 500;
+			let offset = 0;
+			let speed = 1;
+			let n = 12;
+			let rotator = 0.25 * Math.PI;
+
+			const colors = ["red", "orange", "yellow"];
+
+			let ts = Date.now() / 1000;
+
+			function draw() {
+				ctx.canvas.width  = window.innerWidth;
+				ctx.canvas.height = window.innerHeight;
+
+				let nts = Date.now() / 1000;
+				let dt = nts - ts;
+				ts = nts;
+
+				ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+				ctx.save();
+				ctx.shadowBlur = 5;
+				ctx.shadowOffsetX = 1;
+				ctx.shadowOffsetY = -1;
+				ctx.rotate(-1);
+				for (let i = 0; i < n; i++) {
+					ctx.strokeStyle = colors[i % 3];
+					ctx.shadowColor = colors[i % 3];
+					drawSignal(1, waveLength, amplitude, offset);
+					ctx.rotate(rotator/n);
+				}
+				ctx.restore();
+				
+				offset += dt * speed;
+				window.requestAnimationFrame(draw);
+			}
+
+			window.requestAnimationFrame(draw);
+		</script>
+	</body>
 </html>
