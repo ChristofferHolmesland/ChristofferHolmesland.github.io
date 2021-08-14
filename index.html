@@ -150,8 +150,8 @@
 					</p>
 					<div id="links">
 						<a href="https://github.com/ChristofferHolmesland" target="_blank">--&gt; GitHub</a>
-						<a href="https://twitter.com/crholmesland" target="_blank">--&gt; Twitter</a>
-						<a href="https://www.linkedin.com/in/christoffer-holmesland/" target="_blank">--&gt; LinkedIn</a>
+						<a href="https://www.linkedin.com/in/christoffer-holmesland/" target="_blank">--&gt; Twitter</a>
+						<a href="https://twitter.com/crholmesland" target="_blank">--&gt; LinkedIn</a>
 						<a href="mailto:christoffer.holmesland@gmail.com">--&gt; Email</a>
 						<a href="https://www.goodreads.com/user/show/110186564-christoffer-holmesland" target="_blank">--&gt; Goodreads</a>
 						<a href="https://www.youtube.com/channel/UC9WNfNL4qF49DTeN8iIhqTg" target="_blank">--&gt; Youtube</a>
@@ -320,12 +320,9 @@
 			ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 			function drawSignal(dir, waveLength, amplitude, offset) {
-				ctx.beginPath();
 				for (let i = 0; i < 1.2 * canvas.width; i++) {
 					ctx.lineTo(dir * i, amplitude / 2 - amplitude / 2 * Math.sin(offset + i / waveLength));
 				}
-
-				ctx.stroke();	
 			}
 
 			let waveLength = 100;
@@ -334,6 +331,7 @@
 			let speed = 1;
 			let n = 12;
 			let rotator = 0.25 * Math.PI;
+			let samplingInterval = 1;
 
 			const colors = ["red", "orange", "yellow"];
 
@@ -347,20 +345,32 @@
 				let dt = nts - ts;
 				ts = nts;
 
+				let fps = 1 / dt;
+				if (fps < 50 && samplingInterval < 200) {
+					samplingInterval++;
+				} else if (fps > 100 && samplingInterval > 1) {
+					samplingInterval--;
+				}
+
 				ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-				ctx.save();
-				ctx.shadowBlur = 5;
-				ctx.shadowOffsetX = 1;
-				ctx.shadowOffsetY = -1;
-				ctx.rotate(-1);
-				for (let i = 0; i < n; i++) {
-					ctx.strokeStyle = colors[i % 3];
-					ctx.shadowColor = colors[i % 3];
-					drawSignal(1, waveLength, amplitude, offset);
-					ctx.rotate(rotator/n);
+				for (let c = 0; c < colors.length; c++) {
+					ctx.save();
+					ctx.strokeStyle = colors[c];
+					ctx.rotate(-1);
+					ctx.rotate(c * rotator / n);
+					ctx.beginPath();
+					for (let i = 0; i < n; i += 3) {
+						ctx.moveTo(0, amplitude / 2 - amplitude / 2 * Math.sin(offset))
+						for (let j = 0; j < 1.4 * canvas.width; j += samplingInterval) {
+							ctx.lineTo(j, amplitude / 2 - amplitude / 2 * Math.sin(offset + j / waveLength));
+						}
+						ctx.rotate(3 * rotator / n);
+					}
+
+					ctx.stroke();
+					ctx.restore();
 				}
-				ctx.restore();
 				
 				offset += dt * speed;
 				window.requestAnimationFrame(draw);
