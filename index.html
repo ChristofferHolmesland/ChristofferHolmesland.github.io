@@ -1,380 +1,431 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Christoffer</title>
+  <head>
+    <title>Christoffer</title>
 
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: "border-box";
-				overflow: hidden;
-			}
-			
-			body {
-				background-color: black;
-			}
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: "border-box";
+        overflow: hidden;
+      }
 
-			main {
-				position: absolute;
-				top: 20%;
-				left: 30%;
-				color: rgba(32, 223, 32);
-				display: flex;
-				flex-direction: column;
-				font-family: serif;
-				padding: 2rem;
-			}
+      body {
+        background-color: black;
+      }
 
-			.name {
-				font-size: 3em;
-			}
+      main {
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        color: rgba(32, 223, 32);
+        display: flex;
+        flex-direction: column;
+        font-family: serif;
+        padding: 2rem;
+      }
 
-			#links {
-				margin-top: 0.5em;
-				font-size: 1.5em;
-				display: flex;
-				flex-direction: column;
-			}
+      .name {
+        font-size: 3em;
+      }
 
-			a:link, a:visited, a:active {
-				color: inherit;
-				text-decoration: none;
-			}
+      #links {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+        display: flex;
+        flex-direction: column;
+      }
 
-			a:hover {
-				color: rgba(0, 255, 0);
-				text-decoration: underline;
-			}
+      a:link,
+      a:visited,
+      a:active {
+        color: inherit;
+        text-decoration: none;
+      }
 
-			.br {
-				border-right: 1px solid rgba(32, 223, 32);
-				padding-right: 20px;
-				margin-right: 20px;
-				
-				background-color: rgba(0, 0, 0, 0.1);
-        		box-shadow: 0 0 5rem rgba(1, 1, 1);
-			}
+      a:hover {
+        color: rgba(0, 255, 0);
+        text-decoration: underline;
+      }
 
-			.flex-row {
-				display: flex;
-				flex-direction: row;
-			}
-			
-			.flex-column {
-				display: flex;
-				flex-direction: column;
-			}
+      .br {
+        border-right: 1px solid rgba(32, 223, 32);
+        padding-right: 20px;
+        margin-right: 20px;
 
-			.underline {
-				font-size: 0.8em;
-				margin-top: -0.5em;
-			}
+        background-color: rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 5rem rgba(1, 1, 1);
+      }
 
-			#interests {
-				display: flex;
-				flex-direction: column;
-			}
-			
-			.right {
-				display: block;
-				position: relative;
-				bottom: 0;
-				width: 100%;
-				text-align: right;
-				align-self: flex-end;
-				margin-top: 3em;
-			}
+      .flex-row {
+        display: flex;
+        flex-direction: row;
+      }
 
-			#details {
-				display: flex;
-				flex-direction: column;
-			}
+      .flex-column {
+        display: flex;
+        flex-direction: column;
+      }
 
-			#settings {
-				margin-top: 1.5em;
-				visibility: hidden;
-			}
+      .underline {
+        font-size: 0.8em;
+        margin-top: -0.5em;
+      }
 
-			#settings > div {
-				height: 100%;
-				width: 20%;
-				text-align: center;
-			}
+      #interests {
+        display: flex;
+        flex-direction: column;
+      }
 
-			div > .active {
-				background-color: greenyellow;
-			}
+      .right {
+        display: block;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        text-align: right;
+        align-self: flex-end;
+        margin-top: 3em;
+      }
 
-			.setting {
-				width: 20%;
-				height: 20%;
-				background-color: darkred;
-				margin-right: 40%;
-				margin-left: 40%;
-				border-radius: 75%;
-				cursor: pointer;
-				-webkit-user-select: none;   
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
+      #details {
+        display: flex;
+        flex-direction: column;
+      }
 
-			#showhide {
-				width: 100%;
-				text-align: right;
-				cursor: pointer;
-				-webkit-user-select: none;   
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-			
-			#showhidetext {
-				text-decoration: underline;
-			}
-		</style>
-	</head>
+      #settings {
+        margin-top: 1.5em;
+        visibility: hidden;
+      }
 
-	<body>
-		<main>
-			<div class="flex-row">
-				<div class="br">
-					<p class="name">
-						Christoffer
-					</p>
-					<p class="underline">
-						Data scientist | Software Engineer | IoT Engineer
-					</p>
-					<div id="links">
-						<a href="https://github.com/ChristofferHolmesland" target="_blank">--&gt; GitHub</a>
-						<a href="https://twitter.com/crholmesland" target="_blank">--&gt; Twitter</a>
-						<a href="https://www.linkedin.com/in/christoffer-holmesland/" target="_blank">--&gt; LinkedIn</a>
-						<a href="mailto:christoffer.holmesland@gmail.com">--&gt; Email</a>
-						<a href="https://www.goodreads.com/user/show/110186564-christoffer-holmesland" target="_blank">--&gt; Goodreads</a>
-						<a href="https://www.youtube.com/channel/UC9WNfNL4qF49DTeN8iIhqTg" target="_blank">--&gt; Youtube</a>
-					</div>
-				</div>
-				<div id="details">
-					<div id="interests">
-						<h3>interests</h3>
-						<p>- image and signal processing</p>
-						<p>- time series analysis</p>
-						<p>- radio frequency technology</p>
-						<p>- low level optimization</p>
-						<p>- statistics</p>
-						<p>- robotics</p>
-						<p>- books</p>
-					</div>
-					<div class="right">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Did you ever play tic-tac-toe?
-					</div>
-				</div>
-			</div>
-			<div id="showhide" onclick="showhideSettings()">
-				--&gt; <span id="showhidetext">show signal settings</span>&lt;--
-			</div>
-			<div id="settings" class="flex-row">
-				<div id="amplitude">
-					<p>Amplitude</p>
-					<div class="flex-column">
-						<div onclick="setAmplitude(0, 1000)" class="setting">&nbsp;</div>
-						<div onclick="setAmplitude(1, 500)" class="active setting">&nbsp;</div>
-						<div onclick="setAmplitude(2, 250)" class="setting">&nbsp;</div>
-						<div onclick="setAmplitude(3, 125)" class="setting">&nbsp;</div>
-						<div onclick="setAmplitude(4, 62.5)" class="setting">&nbsp;</div>
-					</div>
-				</div>
-				<div id="wavelength">
-					<p>Wavelength</p>
-					<div class="flex-column">
-						<div onclick="setWavelength(0, 400)" class="setting">&nbsp;</div>
-						<div onclick="setWavelength(1, 200)" class="setting">&nbsp;</div>
-						<div onclick="setWavelength(2, 100)" class="active setting">&nbsp;</div>
-						<div onclick="setWavelength(3, 50)" class="setting">&nbsp;</div>
-						<div onclick="setWavelength(4, 25)" class="setting">&nbsp;</div>
-					</div>
-				</div>
-				<div id="rotation">
-					<p>Rotation</p>
-					<div class="flex-column">
-						<div onclick="setRotator(0, 2 * Math.PI)" class="setting">&nbsp;</div>
-						<div onclick="setRotator(1, 1.5 * Math.PI)" class="setting">&nbsp;</div>
-						<div onclick="setRotator(2, Math.PI)" class="setting">&nbsp;</div>
-						<div onclick="setRotator(3, 0.75 * Math.PI)" class="setting">&nbsp;</div>
-						<div onclick="setRotator(4, 0.25 * Math.PI)" class="active setting">&nbsp;</div>
-					</div>
-				</div>
-				<div id="signals">
-					<p>Signals</p>
-					<div class="flex-column">
-						<div onclick="setSignals(0, 75)" class="setting">&nbsp;</div>
-						<div onclick="setSignals(1, 50)" class="setting">&nbsp;</div>
-						<div onclick="setSignals(2, 25)" class="setting">&nbsp;</div>
-						<div onclick="setSignals(3, 12)" class="active setting">&nbsp;</div>
-						<div onclick="setSignals(4, 6)" class="setting">&nbsp;</div>
-					</div>
-				</div>
-				<div id="speed">
-					<p>Speed</p>
-					<div class="flex-column">
-						<div onclick="setSpeed(0, 1.5)" class="setting">&nbsp;</div>
-						<div onclick="setSpeed(1, 1.25)" class="setting">&nbsp;</div>
-						<div onclick="setSpeed(2, 1)" class="active setting">&nbsp;</div>
-						<div onclick="setSpeed(3, 0.75)" class="setting">&nbsp;</div>
-						<div onclick="setSpeed(4, 0.5)" class="setting">&nbsp;</div>
-					</div>
-				</div>
-			</div>
-		</main>
+      #settings > div {
+        height: 100%;
+        width: 20%;
+        text-align: center;
+      }
 
-		<canvas id="canvas"></canvas>
+      div > .active {
+        background-color: greenyellow;
+      }
 
-		<script>
-			let settingsHidden = true;
+      .setting {
+        width: 20%;
+        height: 20%;
+        background-color: darkred;
+        margin-right: 40%;
+        margin-left: 40%;
+        border-radius: 75%;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-			function showhideSettings() {
-				if (settingsHidden) {
-					document.getElementById("settings").style.visibility = "visible";
-					document.getElementById("showhidetext").innerHTML = "hide signal settings";
-				} else {
-					document.getElementById("settings").style.visibility = "hidden";
-					document.getElementById("showhidetext").innerHTML = "show signal settings";
-				}
+      #showhide {
+        width: 100%;
+        text-align: right;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-				settingsHidden = !settingsHidden;
-			}
+      #showhidetext {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
 
-			function setAmplitude(index, newAmplitude) {
-				amplitude = newAmplitude;
+  <body>
+    <main>
+      <div class="flex-row">
+        <div class="br">
+          <p class="name">Christoffer</p>
+          <p class="underline">
+            Data scientist | Software Engineer | IoT Engineer
+          </p>
+          <br />
+          <p>
+            CTO at
+            <a
+              href="https://invig.no"
+              target="_blank"
+              style="text-decoration: underline"
+              >Invig.no</a
+            >
+          </p>
+          <p>Invigorate business by connecting things</p>
+          <br />
+          <p>MSc. Data Science</p>
+          <p>BSc. Computer Science</p>
+          <div id="links">
+            <a href="https://github.com/ChristofferHolmesland" target="_blank"
+              >--&gt; GitHub</a
+            >
+            <a
+              href="https://www.linkedin.com/in/christoffer-holmesland/"
+              target="_blank"
+              >--&gt; LinkedIn</a
+            >
+            <a href="mailto:christoffer.holmesland@gmail.com">--&gt; Email</a>
+            <a
+              href="https://www.goodreads.com/user/show/110186564-christoffer-holmesland"
+              target="_blank"
+              >--&gt; Goodreads</a
+            >
+            <a
+              href="https://www.youtube.com/channel/UC9WNfNL4qF49DTeN8iIhqTg"
+              target="_blank"
+              >--&gt; Youtube</a
+            >
+          </div>
+        </div>
+        <div id="details">
+          <div id="interests">
+            <h3>interests</h3>
+            <p>- image and signal processing</p>
+            <p>- time series analysis</p>
+            <p>- radio frequency technology</p>
+            <p>- low level optimization</p>
+            <p>- statistics</p>
+            <p>- robotics</p>
+            <p>- books</p>
+            <p>- bluetooth, lorawan, etc.</p>
+            <p>- rust</p>
+          </div>
+          <div class="right">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Did you ever
+            play tic-tac-toe?
+          </div>
+        </div>
+      </div>
+      <div id="showhide" onclick="showhideSettings()">
+        --&gt; <span id="showhidetext">show signal settings</span>&lt;--
+      </div>
+      <div id="settings" class="flex-row">
+        <div id="amplitude">
+          <p>Amplitude</p>
+          <div class="flex-column">
+            <div onclick="setAmplitude(0, 1000)" class="setting">&nbsp;</div>
+            <div onclick="setAmplitude(1, 500)" class="active setting">
+              &nbsp;
+            </div>
+            <div onclick="setAmplitude(2, 250)" class="setting">&nbsp;</div>
+            <div onclick="setAmplitude(3, 125)" class="setting">&nbsp;</div>
+            <div onclick="setAmplitude(4, 62.5)" class="setting">&nbsp;</div>
+          </div>
+        </div>
+        <div id="wavelength">
+          <p>Wavelength</p>
+          <div class="flex-column">
+            <div onclick="setWavelength(0, 400)" class="setting">&nbsp;</div>
+            <div onclick="setWavelength(1, 200)" class="setting">&nbsp;</div>
+            <div onclick="setWavelength(2, 100)" class="active setting">
+              &nbsp;
+            </div>
+            <div onclick="setWavelength(3, 50)" class="setting">&nbsp;</div>
+            <div onclick="setWavelength(4, 25)" class="setting">&nbsp;</div>
+          </div>
+        </div>
+        <div id="rotation">
+          <p>Rotation</p>
+          <div class="flex-column">
+            <div onclick="setRotator(0, 2 * Math.PI)" class="setting">
+              &nbsp;
+            </div>
+            <div onclick="setRotator(1, 1.5 * Math.PI)" class="setting">
+              &nbsp;
+            </div>
+            <div onclick="setRotator(2, Math.PI)" class="setting">&nbsp;</div>
+            <div onclick="setRotator(3, 0.75 * Math.PI)" class="setting">
+              &nbsp;
+            </div>
+            <div onclick="setRotator(4, 0.25 * Math.PI)" class="active setting">
+              &nbsp;
+            </div>
+          </div>
+        </div>
+        <div id="signals">
+          <p>Signals</p>
+          <div class="flex-column">
+            <div onclick="setSignals(0, 75)" class="setting">&nbsp;</div>
+            <div onclick="setSignals(1, 50)" class="setting">&nbsp;</div>
+            <div onclick="setSignals(2, 25)" class="setting">&nbsp;</div>
+            <div onclick="setSignals(3, 12)" class="active setting">&nbsp;</div>
+            <div onclick="setSignals(4, 6)" class="setting">&nbsp;</div>
+          </div>
+        </div>
+        <div id="speed">
+          <p>Speed</p>
+          <div class="flex-column">
+            <div onclick="setSpeed(0, 1.5)" class="setting">&nbsp;</div>
+            <div onclick="setSpeed(1, 1.25)" class="setting">&nbsp;</div>
+            <div onclick="setSpeed(2, 1)" class="active setting">&nbsp;</div>
+            <div onclick="setSpeed(3, 0.75)" class="setting">&nbsp;</div>
+            <div onclick="setSpeed(4, 0.5)" class="setting">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+    </main>
 
-				const elements = document.querySelectorAll("#amplitude > div > div");
-				for (let i = 0; i < elements.length; i++) {
-					if (i === index) {
-						elements[i].classList.add("active");
-					} else {
-						elements[i].classList.remove("active");
-					}
-				}
-			}
+    <canvas id="canvas"></canvas>
 
-			function setWavelength(index, newWavelength) {
-				waveLength = newWavelength;
+    <script>
+      let settingsHidden = true
 
-				const elements = document.querySelectorAll("#wavelength > div > div");
-				for (let i = 0; i < elements.length; i++) {
-					if (i === index) {
-						elements[i].classList.add("active");
-					} else {
-						elements[i].classList.remove("active");
-					}
-				}
-			}
+      function showhideSettings() {
+        if (settingsHidden) {
+          document.getElementById("settings").style.visibility = "visible"
+          document.getElementById("showhidetext").innerHTML =
+            "hide signal settings"
+        } else {
+          document.getElementById("settings").style.visibility = "hidden"
+          document.getElementById("showhidetext").innerHTML =
+            "show signal settings"
+        }
 
-			function setRotator(index, newRotator) {
-				rotator = newRotator;
+        settingsHidden = !settingsHidden
+      }
 
-				const elements = document.querySelectorAll("#rotation > div > div");
-				for (let i = 0; i < elements.length; i++) {
-					if (i === index) {
-						elements[i].classList.add("active");
-					} else {
-						elements[i].classList.remove("active");
-					}
-				}
-			}
-			
-			function setSignals(index, newSignals) {
-				n = newSignals;
+      function setAmplitude(index, newAmplitude) {
+        amplitude = newAmplitude
 
-				const elements = document.querySelectorAll("#signals > div > div");
-				for (let i = 0; i < elements.length; i++) {
-					if (i === index) {
-						elements[i].classList.add("active");
-					} else {
-						elements[i].classList.remove("active");
-					}
-				}
-			}
+        const elements = document.querySelectorAll("#amplitude > div > div")
+        for (let i = 0; i < elements.length; i++) {
+          if (i === index) {
+            elements[i].classList.add("active")
+          } else {
+            elements[i].classList.remove("active")
+          }
+        }
+      }
 
-			function setSpeed(index, newSpeed) {
-				speed = newSpeed;
+      function setWavelength(index, newWavelength) {
+        waveLength = newWavelength
 
-				const elements = document.querySelectorAll("#speed > div > div");
-				for (let i = 0; i < elements.length; i++) {
-					if (i === index) {
-						elements[i].classList.add("active");
-					} else {
-						elements[i].classList.remove("active");
-					}
-				}
-			}
+        const elements = document.querySelectorAll("#wavelength > div > div")
+        for (let i = 0; i < elements.length; i++) {
+          if (i === index) {
+            elements[i].classList.add("active")
+          } else {
+            elements[i].classList.remove("active")
+          }
+        }
+      }
 
-			const canvas = document.getElementById("canvas");
-			const ctx = canvas.getContext("2d");
-			canvas.height = window.innerHeight;
-			canvas.width = window.innerWidth;
+      function setRotator(index, newRotator) {
+        rotator = newRotator
 
-			ctx.fillRect(0, 0, canvas.width, canvas.height);
+        const elements = document.querySelectorAll("#rotation > div > div")
+        for (let i = 0; i < elements.length; i++) {
+          if (i === index) {
+            elements[i].classList.add("active")
+          } else {
+            elements[i].classList.remove("active")
+          }
+        }
+      }
 
-			function drawSignal(dir, waveLength, amplitude, offset) {
-				for (let i = 0; i < 1.2 * canvas.width; i++) {
-					ctx.lineTo(dir * i, amplitude / 2 - amplitude / 2 * Math.sin(offset + i / waveLength));
-				}
-			}
+      function setSignals(index, newSignals) {
+        n = newSignals
 
-			let waveLength = 100;
-			let amplitude = 500;
-			let offset = 0;
-			let speed = 1;
-			let n = 12;
-			let rotator = 0.25 * Math.PI;
-			let samplingInterval = 1;
+        const elements = document.querySelectorAll("#signals > div > div")
+        for (let i = 0; i < elements.length; i++) {
+          if (i === index) {
+            elements[i].classList.add("active")
+          } else {
+            elements[i].classList.remove("active")
+          }
+        }
+      }
 
-			const colors = ["red", "orange", "yellow"];
+      function setSpeed(index, newSpeed) {
+        speed = newSpeed
 
-			let ts = Date.now() / 1000;
+        const elements = document.querySelectorAll("#speed > div > div")
+        for (let i = 0; i < elements.length; i++) {
+          if (i === index) {
+            elements[i].classList.add("active")
+          } else {
+            elements[i].classList.remove("active")
+          }
+        }
+      }
 
-			function draw() {
-				ctx.canvas.width  = window.innerWidth;
-				ctx.canvas.height = window.innerHeight;
+      const canvas = document.getElementById("canvas")
+      const ctx = canvas.getContext("2d")
+      canvas.height = window.innerHeight
+      canvas.width = window.innerWidth
 
-				let nts = Date.now() / 1000;
-				let dt = nts - ts;
-				ts = nts;
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-				let fps = 1 / dt;
-				if (fps < 50 && samplingInterval < 200) {
-					samplingInterval++;
-				} else if (fps > 70 && samplingInterval > 1) {
-					samplingInterval--;
-				}
+      function drawSignal(dir, waveLength, amplitude, offset) {
+        for (let i = 0; i < 1.2 * canvas.width; i++) {
+          ctx.lineTo(
+            dir * i,
+            amplitude / 2 - (amplitude / 2) * Math.sin(offset + i / waveLength)
+          )
+        }
+      }
 
-				ctx.fillRect(0, 0, canvas.width, canvas.height);
+      let waveLength = 100
+      let amplitude = 500
+      let offset = 0
+      let speed = 1
+      let n = 12
+      let rotator = 0.25 * Math.PI
+      let samplingInterval = 1
 
-				for (let c = 0; c < colors.length; c++) {
-					ctx.save();
-					ctx.strokeStyle = colors[c];
-					ctx.rotate(-1);
-					ctx.rotate(c * rotator / n);
-					ctx.beginPath();
-					for (let i = 0; i < n; i += 3) {
-						ctx.moveTo(0, amplitude / 2 - amplitude / 2 * Math.sin(offset))
-						for (let j = 0; j < 1.4 * canvas.width; j += samplingInterval) {
-							ctx.lineTo(j, amplitude / 2 - amplitude / 2 * Math.sin(offset + j / waveLength));
-						}
-						ctx.rotate(3 * rotator / n);
-					}
+      const colors = ["red", "orange", "yellow"]
 
-					ctx.stroke();
-					ctx.restore();
-				}
-				
-				offset += dt * speed;
-				window.requestAnimationFrame(draw);
-			}
+      let ts = Date.now() / 1000
 
-			window.requestAnimationFrame(draw);
-		</script>
-	</body>
+      function draw() {
+        ctx.canvas.width = window.innerWidth
+        ctx.canvas.height = window.innerHeight
+
+        let nts = Date.now() / 1000
+        let dt = nts - ts
+        ts = nts
+
+        let fps = 1 / dt
+        if (fps < 50 && samplingInterval < 200) {
+          samplingInterval++
+        } else if (fps > 70 && samplingInterval > 1) {
+          samplingInterval--
+        }
+
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+        for (let c = 0; c < colors.length; c++) {
+          ctx.save()
+          ctx.strokeStyle = colors[c]
+          ctx.rotate(-1)
+          ctx.rotate((c * rotator) / n)
+          ctx.beginPath()
+          for (let i = 0; i < n; i += 3) {
+            ctx.moveTo(0, amplitude / 2 - (amplitude / 2) * Math.sin(offset))
+            for (let j = 0; j < 1.4 * canvas.width; j += samplingInterval) {
+              ctx.lineTo(
+                j,
+                amplitude / 2 -
+                  (amplitude / 2) * Math.sin(offset + j / waveLength)
+              )
+            }
+            ctx.rotate((3 * rotator) / n)
+          }
+
+          ctx.stroke()
+          ctx.restore()
+        }
+
+        offset += dt * speed
+        window.requestAnimationFrame(draw)
+      }
+
+      window.requestAnimationFrame(draw)
+    </script>
+  </body>
 </html>
